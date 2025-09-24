@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="branding">
+            <h1>FocusFlow Dashboard</h1>
+            <p>Organiseer je dag met overzicht en rust</p>
+        </div>
+        <div class="top-controls">
+            <div class="datetime">
+                <span id="live-date" class="date"></span>
+                <span id="live-clock" class="clock"></span>
+            </div>
+            <button id="theme-toggle" aria-label="Schakel thema">🌙 Donker</button>
+        </div>
+        <nav class="main-nav">
+            <a href="#todo-section">Taken</a>
+            <a href="#calculator-section">Rekenmachine</a>
+            <a href="#quote-section">Quotes</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>Dagelijkse focus</h2>
+            <ul>
+                <li>Plan je prioriteiten</li>
+                <li>Werk in blokken</li>
+                <li>Neem pauzes</li>
+                <li>Bewaar balans</li>
+            </ul>
+            <div class="sidebar-card">
+                <h3>Tip van de dag</h3>
+                <p>Start met de taak die het meeste impact heeft. Kleine stappen leiden tot grote resultaten.</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section id="todo-section" class="card todo">
+                <div class="card-header">
+                    <h2>Todo-lijst</h2>
+                    <p>Voeg taken toe, vink af wat klaar is en houd het overzicht.</p>
+                </div>
+                <form id="todo-form" class="todo-form">
+                    <input type="text" id="todo-input" placeholder="Wat ga je vandaag doen?" aria-label="Nieuwe taak" required>
+                    <button type="submit">Toevoegen</button>
+                </form>
+                <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+            </section>
+
+            <section id="calculator-section" class="card calculator">
+                <div class="card-header">
+                    <h2>Rekenmachine</h2>
+                    <p>Snelle berekeningen binnen handbereik.</p>
+                </div>
+                <div class="calculator-display" id="calc-display">0</div>
+                <div class="calculator-grid">
+                    <button data-action="clear">C</button>
+                    <button data-action="delete">⌫</button>
+                    <button data-value="/">÷</button>
+                    <button data-value="*">×</button>
+
+                    <button data-value="7">7</button>
+                    <button data-value="8">8</button>
+                    <button data-value="9">9</button>
+                    <button data-value="-">−</button>
+
+                    <button data-value="4">4</button>
+                    <button data-value="5">5</button>
+                    <button data-value="6">6</button>
+                    <button data-value="+">+</button>
+
+                    <button data-value="1">1</button>
+                    <button data-value="2">2</button>
+                    <button data-value="3">3</button>
+                    <button data-action="equals" class="equals">=</button>
+
+                    <button data-value="0" class="zero">0</button>
+                    <button data-value=".">.</button>
+                </div>
+            </section>
+
+            <section id="quote-section" class="card quotes">
+                <div class="card-header">
+                    <h2>Inspirerende quote</h2>
+                    <p>Een vleugje motivatie wanneer je het nodig hebt.</p>
+                </div>
+                <blockquote id="quote-display">Klik op de knop om een inspirerende quote te zien.</blockquote>
+                <button id="quote-button">Geef me inspiratie</button>
+            </section>
+        </main>
+    </div>
+
+    <footer class="app-footer">
+        <p>Gemaakt met aandacht voor focus en eenvoud. &copy; <span id="footer-year"></span></p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
